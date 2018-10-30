@@ -29,14 +29,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         boton1 = (Button)findViewById(R.id.btncalcular);
         }
-        public void clickEnviar(View view){
+        public void save(View view){
             datosUsuarios("David", "Reyna", "dreyna", "123");
         }
         public void datosUsuarios(String nombres, String apellidos, String usuario, String clave) {
             AsyncHttpClient client = new AsyncHttpClient();
-            //String url = "http://192.168.0.22/LP3Moviles/registro.php?";
-            String url = "http://192.168.40.26/LP3Moviles/registro.php";
+            Toast.makeText(MainActivity.this, "SI", Toast.LENGTH_SHORT).show();
+            String url = "http://172.17.8.34/rest/registro.php?";
             String parametros = "Nombres=" + nombres + "&Apellidos=" + apellidos + "&Usuario=" + usuario + "&Clave=" + clave;
+            //http://172.17.8.34/rest/registro.php?Nombres=hola&Apellidos=hola2&Usuario=abc&Clave=123
             client.post(url + parametros, new AsyncHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void listarUsuarios(){
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://192.168.40.26/LP3Moviles/ListaUsuarios.php";
+        String url = "http://172.17.8.34/rest/ListaUsuarios.php";
         RequestParams  params = new RequestParams();
         client.get(url, null, new AsyncHttpResponseHandler() {
                     @Override

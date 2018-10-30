@@ -7,12 +7,12 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btncalcular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enviar"
-        android:id="@+id/btncalcular"
         android:layout_gravity="center_horizontal"
-        android:onClick="clickEnviar" />
+        android:onClick="save"
+        android:text="Enviar" />
     <!--
     <ListView
         android:layout_width="wrap_content"
