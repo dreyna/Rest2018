@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
                             cargarLisview(getJson(new String(responseBody)));
                         }
                     }
-
                     @Override
                     public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
 
