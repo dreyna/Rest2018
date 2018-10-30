@@ -20,17 +20,25 @@ import java.util.ArrayList;
 import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText n1,n2;
+    private EditText edtn,edtap,edtuser,edtclave;
     private ListView lvdatos;
     private Button boton1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        edtn = (EditText)findViewById(R.id.nombres);
+        edtap = (EditText)findViewById(R.id.apellidos);
+        edtuser = (EditText)findViewById(R.id.user);
+        edtclave = (EditText)findViewById(R.id.clave);
         boton1 = (Button)findViewById(R.id.btncalcular);
         }
         public void save(View view){
-            datosUsuarios("David", "Reyna", "dreyna", "123");
+            String nombres = edtn.getText().toString();
+            String apellidos = edtap.getText().toString();
+            String usuario = edtuser.getText().toString();
+            String clave = edtclave.getText().toString();
+            datosUsuarios(nombres,apellidos,usuario,clave);
         }
         public void datosUsuarios(String nombres, String apellidos, String usuario, String clave) {
             AsyncHttpClient client = new AsyncHttpClient();
