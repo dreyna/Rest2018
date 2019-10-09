@@ -11,6 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="API REST - PHP"
+            android:textSize="32dp"
+            android:textColor="#EB0B0B"
+            android:layout_marginBottom="30dp"
+            android:gravity="center_horizontal">
+
+        </TextView>
 
     <TextView
         android:layout_width="match_parent"
