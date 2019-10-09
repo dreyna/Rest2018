@@ -6,39 +6,59 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:padding="30dp">
+    android:padding="50dp">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#47A4F5"
         android:text="Nombres:"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingVertical="5dp"
+        android:textColor="#F50C0C"
+        android:background="@drawable/edt_estilos"
         android:id="@+id/nombres"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#47A4F5"
         android:text="Apellidos:"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/edt_estilos"
+        android:paddingLeft="10dp"
+        android:paddingVertical="5dp"
+        android:textColor="#F50C0C"
         android:id="@+id/apellidos"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#47A4F5"
         android:text="Usuario:"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingVertical="5dp"
+        android:textColor="#F50C0C"
+        android:background="@drawable/edt_estilos"
         android:id="@+id/user"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#47A4F5"
         android:text="Clave:"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:paddingVertical="5dp"
+        android:textColor="#F50C0C"
+        android:background="@drawable/edt_estilos"
         android:id="@+id/clave"/>
     <Button
         android:id="@+id/btncalcular"
@@ -46,13 +66,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:onClick="save"
+        android:layout_marginTop="30dp"
+        android:background="#094D81"
+        android:textColor="#E6D33A"
         android:text="Guardar" />
 
-    <!--
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/listaUser"
-        />
-    -->
 </LinearLayout>
