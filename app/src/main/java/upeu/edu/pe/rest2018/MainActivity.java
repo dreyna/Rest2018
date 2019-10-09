@@ -1,5 +1,6 @@
 package upeu.edu.pe.rest2018;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -56,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                         String resultado = new String(responseBody);
                         Toast.makeText(MainActivity.this, "Registro Guardado correctamente...! " + resultado, Toast.LENGTH_LONG).show();
                         limpiar();
+                        Intent intent = new Intent(getApplicationContext(), ListarActivity.class);
+                        startActivity(intent);
                     } else {
                         Toast.makeText(MainActivity.this, "No se Registro", Toast.LENGTH_SHORT).show();
                     }
