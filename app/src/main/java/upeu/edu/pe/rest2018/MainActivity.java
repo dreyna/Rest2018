@@ -22,7 +22,7 @@ import cz.msebera.android.httpclient.Header;
 public class MainActivity extends AppCompatActivity {
     private EditText edtn,edtap,edtuser,edtclave;
     private ListView lvdatos;
-    private Button boton1;
+    private Button boton1, boton2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
         edtuser = (EditText)findViewById(R.id.user);
         edtclave = (EditText)findViewById(R.id.clave);
         boton1 = (Button)findViewById(R.id.btncalcular);
+        boton2 = (Button)findViewById(R.id.btnlimpiar);
+        edtn.requestFocus();
+        }
+        public void reset(View view){
+            limpiar();
         }
         public void save(View view){
             String nombres = edtn.getText().toString();
@@ -42,18 +47,17 @@ public class MainActivity extends AppCompatActivity {
         }
         public void datosUsuarios(String nombres, String apellidos, String usuario, String clave) {
             AsyncHttpClient client = new AsyncHttpClient();
-            Toast.makeText(MainActivity.this, "SI", Toast.LENGTH_SHORT).show();
             String url = "http://192.168.74.17/rest/registro.php?";
             String parametros = "Nombres=" + nombres + "&Apellidos=" + apellidos + "&Usuario=" + usuario + "&Clave=" + clave;
-            //http://172.17.8.34/rest/registro.php?Nombres=hola&Apellidos=hola2&Usuario=abc&Clave=123
             client.post(url + parametros, new AsyncHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                     if (statusCode == 200) {
                         String resultado = new String(responseBody);
-                        Toast.makeText(MainActivity.this, "Ok: " + resultado, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Registro Guardado correctamente...! " + resultado, Toast.LENGTH_LONG).show();
+                        limpiar();
                     } else {
-                        Toast.makeText(MainActivity.this, "piña", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "No se Registro", Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -98,5 +102,13 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return lista;
+    }
+    public void limpiar(){
+        edtn.setText("");
+        edtap.setText("");
+        edtuser.setText("");
+        edtclave.setText("");
+        edtn.requestFocus();
+
     }
 }
